@@ -8,7 +8,7 @@ const Login = ({
   history,
   setLogged,
 }) => {
-  // const [sqlLoggedUser, setSqlLoggedUser] = useState([]);
+  console.log(sessionStorage.getItem("loggedId"));
   const handleonChange = (e) => {
     const { name, value } = e.target;
 
@@ -39,11 +39,7 @@ const Login = ({
         sessionStorage.setItem("loggedId", response.data[0].id);
         sessionStorage.setItem("loggedUsername", response.data[0].username);
         sessionStorage.setItem("loggedEmail", response.data[0].email);
-        // Axios.post("http://localhost:3001/api/insertAllAppointments", {
-        //   username: sessionStorage.getItem("loggedId"),
-        //   // email: userSignupInformation.email,
-        //   // password: userSignupInformation.password,
-        // }).then(() => {});
+
         history.push({
           pathname: `/seller`,
         });
@@ -82,12 +78,11 @@ const Login = ({
                 />
               </div>
             </div>
-
             <button type="submit" className="btn btn-primary mt-3 wow zoomIn">
               Login
             </button>
             <br />
-            <Link to="/login">Already have an account</Link>
+            don't have an account ? <Link to="/register">signup</Link>
           </form>
         </div>
       </div>

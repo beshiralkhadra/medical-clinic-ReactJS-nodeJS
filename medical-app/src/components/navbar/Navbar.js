@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 
 const Navbar = ({ setLogged, logged, history }) => {
+  useEffect(() => {
+    if (sessionStorage.getItem("loggedId")) {
+      setLogged(true);
+    }
+  }, []);
   return (
     <div>
       <header>

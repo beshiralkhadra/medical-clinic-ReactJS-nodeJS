@@ -18,7 +18,7 @@ const Seller = () => {
     Axios.delete(`http://localhost:3001/api/reject/${id}`).then((response) => {
       setGetAppointmentsDetails(
         getAppointmentsDetails.filter((appoi) => {
-          return appoi.id == id;
+          return appoi.id != id;
         })
       );
     });
@@ -67,7 +67,7 @@ const Seller = () => {
             </tr>
           </thead>
           <tbody>
-            {getAppointmentsDetails.map((item, id) => (
+            {getAppointmentsDetails.map((item) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.user_id}</td>

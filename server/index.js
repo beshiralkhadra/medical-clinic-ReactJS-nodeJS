@@ -42,7 +42,7 @@ app.get("/api/get", (req, res) => {
 app.post("/api/insert", (req, res) => {
   const username = req.body.username;
   const email = req.body.email;
-  const date = req.body.password;
+  const password = req.body.password;
   const sqlInsert =
     "INSERT INTO clients (username,email,password) VALUES (?,?,?)";
   db.query(sqlInsert, [username, email, password], (err, result) => {
@@ -51,7 +51,7 @@ app.post("/api/insert", (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log("heeeey");
+  console.log("server running on port 3001");
 });
 //////////////////////////////////////////////handling appointments
 app.post("/api/insertAppointment", (req, res) => {
