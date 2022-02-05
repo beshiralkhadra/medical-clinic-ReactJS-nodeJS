@@ -1,0 +1,29 @@
+.home-explore {
+  background-color: #fafbfc;
+  padding: 2em;
+}
+.home-explore h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #00d9a5;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid;
+  width: 40%;
+  align-items: center;
+  margin: 2em auto;
+  padding-bottom: 0.5em;
+}
+.home-doctors {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .home-doctors {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
