@@ -49,9 +49,9 @@ const Navbar = ({ setLogged, logged, history }) => {
 
         <nav className="navbar navbar-expand-lg navbar-light shadow-sm">
           <div className="container">
-            <a className="navbar-brand" href="#">
+            <Link className="navbar-brand" to="/">
               <span className="text-primary">One</span>-Health
-            </a>
+            </Link>
 
             <form action="#">
               <div className="input-group input-navbar">
