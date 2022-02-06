@@ -4,7 +4,7 @@ import Axios from "axios";
 import data from "./Data";
 import Cards from "./Cards";
 import "./home.css";
-const Home = ({ history }) => {
+const Home = ({ history, logged }) => {
   console.log(sessionStorage.getItem("loggedId"));
 
   const [userInfo, setUserInfo] = useState({
@@ -38,18 +38,23 @@ const Home = ({ history }) => {
   ///////////////////////////////////handle on submit
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(userInfo.tel);
-    Axios.post("http://localhost:3001/api/insertAppointment", {
-      username: userId,
-      date: userInfo.date,
-      time: userInfo.time,
-      doctor: userInfo.doctor,
-      tel: userInfo.tel,
-    }).then(() => {});
-    alert("your appointment had been sent ,please wait until it accepted");
-    history.push({
-      pathname: `/login`,
-    });
+    if (logged) {
+      Axios.post("http://localhost:3001/api/insertAppointment", {
+        username: userId,
+        date: userInfo.date,
+        time: userInfo.time,
+        doctor: userInfo.doctor,
+        tel: userInfo.tel,
+      }).then(() => {});
+      alert("your appointment had been sent ,please wait until it accepted");
+      history.push({
+        pathname: `/login`,
+      });
+    } else {
+      history.push({
+        pathname: `/login`,
+      });
+    }
   };
   return (
     <div>

@@ -112,12 +112,11 @@ const Register = ({
                 <span style={{ color: "red" }}>not match </span>
               ) : null}
             </div>
-
             <button type="submit" className="btn btn-primary mt-3 wow zoomIn">
               Submit Request
             </button>
             <br />
-            <Link to="/login">Already have an account</Link>
+            Already have an account? <Link to="/login"> Signin</Link>
           </form>
         </div>
       </div>

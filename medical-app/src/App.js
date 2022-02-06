@@ -25,7 +25,7 @@ function App() {
       <Navbar setLogged={setLogged} logged={logged} />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home logged={logged} />
         </Route>
         <Route exact path="/seller">
           <Seller />
